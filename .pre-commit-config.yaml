@@ -8,7 +8,7 @@ repos:
     rev: v4.4.0
     hooks:
       - id: check-added-large-files
-        args: ['--maxkb=20000']
+        args: ['--maxkb=3000000']
       - id: check-ast
       - id: check-builtin-literals
       - id: check-case-conflict

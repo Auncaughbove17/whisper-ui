@@ -40,13 +40,13 @@ def get_formatted_date(date_str: str) -> str:
 # ---------
 with st.sidebar.expander("➕ &nbsp; Add Media", expanded=False):
     # # Render media type selection on the sidebar & the form
-    source_type = st.radio("Media Source", ["YouTube", "Upload"], label_visibility="collapsed")
+    source_type = st.radio("Media Source", ["Upload","YouTube"], label_visibility="collapsed")
     with st.form("input_form"):
         if source_type == "YouTube":
             youtube_url = st.text_input("Youtube video or playlist URL")
         elif source_type == "Upload":
             input_files = st.file_uploader(
-                "Add one or more files", type=["mp4", "avi", "mov", "mkv", "mp3", "wav"], accept_multiple_files=True
+                "Add one or more files", type=["mp4", "avi", "mov", "mkv", "mp3", "m4a", "wav"], accept_multiple_files=True
             )
         task_options = ["transcribe", "translate"]
         task = st.selectbox(
